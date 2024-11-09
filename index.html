@@ -12,6 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Builder </title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body class="bg-gray-100 font-sans">
 
@@ -43,10 +47,69 @@
             </div>
         </div>
     </section>
-
+   <!-- Barre de progression -->
+   <div class="mb-10">
+    <!-- Étapes avec icônes et effets -->
+    <div class="flex justify-between items-center mb-4 mt-12 ">
+      <div class="flex flex-col items-center">
+        <span
+          class="flex items-center justify-center w-10 h-10 bg-blue-500 text-white font-bold rounded-full transition-all duration-500 ease-in-out"
+          id="step1">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="text-sm font-medium text-gray-600 mt-2">Infos personnelles</span>
+      </div>
+      <div class="flex-1 h-1 bg-blue-200 mx-2"></div>
+      
+      <div class="flex flex-col items-center">
+        <span
+          class="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
+          id="step3">
+          <i class="fas fa-graduation-cap"></i>
+        </span>
+        <span class="text-sm font-medium text-gray-600 mt-2">Éducation</span>
+      </div>
+      <div class="flex-1 h-1 bg-blue-200 mx-2"></div>
+      <div class="flex flex-col items-center">
+        <span
+          class="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
+          id="step2">
+          <i class="fas fa-briefcase"></i>
+        </span>
+        <span class="text-sm font-medium text-gray-600 mt-2">Experience</span>
+      </div>
+      <div class="flex-1 h-1 bg-blue-200 mx-2"></div>
+      <div class="flex flex-col items-center">
+        <span
+          class="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
+          id="step5">
+          <i class="fas fa-language"></i>
+        </span>
+        <span class="text-sm font-medium text-gray-600 mt-2">Langues</span>
+      </div>
+      <div class="flex-1 h-1 bg-blue-200 mx-2"></div>
+      <div class="flex flex-col items-center">
+        <span
+          class="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
+          id="step5">
+          <i class="fas fa-puzzle-piece"></i>
+        </span>
+        <span class="text-sm font-medium text-gray-600 mt-2">skiils</span>
+      </div>
+    </div>
+    <!-- Barre de progression visuelle -->
+    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+      <div id="progress-bar"
+        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-1/5 transition-all duration-500 ease-in-out">
+      </div>
+    </div>
+  </div>
+    <form >
+       
     <section id="form-section-one" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg ">
+        <div class="step-content" data-step="1">
         <h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Information personnelle </h2>
-        <form>
+        
             <div class="mb-4">
                 <label for="image" class="block text-sm font-medium text-gray-700">Votre photo</label>
                <input type="file" id="image" accept="image/*" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
@@ -83,14 +146,24 @@
                 <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
                 <input type="email" id="email" placeholder="Votre email" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
             </div>
+            <div class="mb-4">
+                <label for="linkden" class="block text-sm font-medium text-gray-600">linkden</label>
+                <input type="url" id="linkden" placeholder="Votre linkden" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+            </div>
+            <div class="mb-4">
+                <label for="github" class="block text-sm font-medium text-gray-600">github</label>
+                <input type="url" id="github" placeholder="Votre github" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+            </div>
 
             <div class="text-center">
                 <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
             </div>
+        </div>
         </section>
-            <section id="form-section-two" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg ">
+            <section id="form-section-two" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden">
+                <div class="step-content hidden" data-step="2">
                 <h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Education </h2>
-                <form>
+            
                     <div class="mb-4">
                         <label for="ecole" class="block text-sm font-medium text-gray-600">ecole</label>
                         <input type="text" id="ecole" placeholder="Votre ecole" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
@@ -115,19 +188,25 @@
                         <label for="date" class="block text-sm font-medium text-gray-600">annee de diplome</label>
                         <input type="date" id="country" placeholder="Votre date de gradution" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                     </div>
+                    <div class="mb-4">
+                        <label for="description" class="block text-sm font-medium text-gray-600">description</label>
+                        <textarea  id="description" placeholder="Votre description" class="mt-1 p-2 w-full border border-gray-300 rounded-md"></textarea>
+                    </div>
                    
                   <div class="flex justify-between items-center ">
                     <div class="text-left">
-                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                        <button type="submit"  class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
                     </div>
                 </div>
+            </div>
            </section>
-           <section id="form-section-three" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg ">
+           <section id="form-section-three" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden ">
+            <div class="step-content " data-step="3">
             <h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Experience </h2>
-            <form>
+           
               
                 <div class="mb-4">
                     <label for="post" class="block text-sm font-medium text-gray-600">intitule de post</label>
@@ -147,7 +226,10 @@
                         <option value="stage">stage</option>
                     </select>
                 </div>
-                
+                <div class="mb-4">
+                    <label for="description" class="block text-sm font-medium text-gray-600">description</label>
+                    <textarea  id="description" placeholder="Votre description" class="mt-1 p-2 w-full border border-gray-300 rounded-md"></textarea>
+                </div>
                 <div class="mb-4">
                     <label for="date" class="block text-sm font-medium text-gray-600">Date de debut</label>
                     <input type="date" id="date de debut" placeholder="Votre date de debut" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
@@ -156,7 +238,7 @@
                     <label for="date" class="block text-sm font-medium text-gray-600">Date de fin </label>
                     <input type="date" id="date de fin" placeholder="Votre date de fin" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                 </div>
-                   
+              
                 <div class="text-center">
                     <input type="checkbox" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Je Travaille Actuellement Ici</button>
                 </div>
@@ -169,16 +251,35 @@
                     <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
                 </div>
             </div>
+        </div>
        </section>
-           
+       <section id="form-section-four" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg  ">
+        <div class="container">
+            <div class="flex space-x-28 justify-center">
+                <h2 class="text-3xl font-semibold mb-6 text-gray-800 ">Language</h2>
+                <a href="#" id="add" class="text-3xl font-semibold mb-6 text-gray-800 ">&plus;</a>
+                
+            </div>
+            <div id="language-container"></div>
+            <div id="display-container" class="mt-8 p-4 bg-gray-100 rounded-lg"></div>  
+    </div>
+       </section>
+       <section id="skills-section" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg">
+        <div class="container">
+            <div class="flex space-x-28 justify-center">
+                <h2 class="text-3xl font-semibold mb-6 text-gray-800">Skills</h2>
+                <a href="#" id="add-skill" class="text-3xl font-semibold mb-6 text-gray-800">&plus;</a>
+            </div>
+            <div id="skills-container"></div> <!-- Conteneur pour les compétences ajoutées -->
+            <div id="display-skills-container" class="mt-8 p-4 bg-gray-100 rounded-lg"></div> <!-- Conteneur pour l'affichage -->
+        </div>
+    </section>
         </form>
  
 
 
    
-    <script>
-   
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
