@@ -1,3 +1,81 @@
+let hero=document.getElementById("hero-section")
+let progresse=document.getElementById("bar-progresse")
+let forminfo=document.getElementById("form-section-one")
+let formEducation=document.getElementById("form-section-two")
+let formExperience=document.getElementById("form-section-three")
+let formLangue=document.getElementById("form-section-four")
+let formSkills=document.getElementById("skills-section")
+let progressBar = document.getElementById("progress-bar")
+let barinfo= "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-1/5 transition-all duration-500 ease-in-out"
+let barEducation="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-2/5 transition-all duration-500 ease-in-out"
+let barExperience="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-3/5 transition-all duration-500 ease-in-out"
+let barLangue="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-4/5 transition-all duration-500 ease-in-out"
+let barSkills="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-5/5 transition-all duration-500 ease-in-out"
+let color="flex items-center justify-center w-10 h-10 bg-blue-500 text-white font-bold rounded-full transition-all duration-500 ease-in-out"
+let nonColor="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
+let iconInfo=document.getElementById("step1")
+let iconEducation=document.getElementById("step3")
+let iconExperience=document.getElementById("step2")
+let iconlangue=document.getElementById("step4")
+let iconskiils=document.getElementById("step5")
+function displayFormInfo(){
+    hero.style.display="none"
+    progresse.style.display="block"
+    forminfo.style.display="block"
+     formEducation.style.display="none"
+     iconInfo.className=color;
+     iconEducation.className=nonColor;
+    
+}
+function displayFormEducation(){
+    hero.style.display="none"
+    forminfo.style.display="none"
+    progresse.style.display="block"
+    formEducation.style.display="block"
+    formExperience.style.display="none"
+    progressBar.className=barinfo;
+    iconInfo.className=nonColor;
+    iconEducation.className=color;
+    iconExperience.className=nonColor;
+
+   
+}
+function displayFormExperience(){
+    formEducation.style.display="none"
+     progresse.style.display="block"
+     formExperience.style.display="block"
+      formLangue.style.display="none"
+      progressBar.className=barEducation;
+      iconExperience.className=color;
+      iconEducation.className=nonColor;
+      iconlangue.className=nonColor;
+
+     
+
+}
+function displayformlangue(){
+      formExperience.style.display="none"
+      progresse.style.display="block"
+      formLangue.style.display="block"
+      formSkills.style.display="none"
+      progressBar.className=barExperience;
+      iconlangue.className=color;
+      iconExperience.className=nonColor;
+      iconskiils.className=nonColor;
+
+}
+
+function displayformskils(){
+    formLangue.style.display="none"
+    progresse.style.display="block"
+    formSkills.style.display="block"
+    progressBar.className=barLangue;
+    iconskiils.className=color;
+    iconlangue.className=nonColor;
+}
+
+
+
 const addBtn = document.getElementById("add");
 const languageContainer = document.getElementById("language-container");
 const displayContainer = document.getElementById("display-container");
@@ -103,7 +181,7 @@ function ajouterSkill() {
     confirmSkillBtn.textContent = "Add";
     confirmSkillBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
     
-    // Bouton de suppression
+    
     const deleteBtn = document.createElement("a");
     deleteBtn.innerHTML = "&times;";
     deleteBtn.className = "text-red-500 text-2xl cursor-pointer";

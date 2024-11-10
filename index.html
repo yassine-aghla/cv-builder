@@ -20,7 +20,7 @@
 <body class="bg-gray-100 font-sans">
 
     <!-- Section Hero -->
-    <section class="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 py-20 text-white">
+    <section id="hero-section" class="bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 py-20 text-white">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-6">Bienvenue sur le CV Builder</h1>
             <p class="text-lg mb-12">Découvrez des exemples de CV et créez le vôtre dès maintenant !</p>
@@ -43,12 +43,12 @@
 
         
             <div class="mt-12">
-                <button class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Commencer de creer mon CV</button>
+                <button onclick="displayFormInfo()"  class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Commencer de creer mon CV</button>
             </div>
         </div>
     </section>
    <!-- Barre de progression -->
-   <div class="mb-10">
+   <div id="bar-progresse" class="mb-10 hidden">
     <!-- Étapes avec icônes et effets -->
     <div class="flex justify-between items-center mb-4 mt-12 ">
       <div class="flex flex-col items-center">
@@ -82,7 +82,7 @@
       <div class="flex flex-col items-center">
         <span
           class="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
-          id="step5">
+          id="step4">
           <i class="fas fa-language"></i>
         </span>
         <span class="text-sm font-medium text-gray-600 mt-2">Langues</span>
@@ -94,19 +94,19 @@
           id="step5">
           <i class="fas fa-puzzle-piece"></i>
         </span>
-        <span class="text-sm font-medium text-gray-600 mt-2">skiils</span>
+        <span class="text-sm font-medium text-gray-600 mt-2">Skiils</span>
       </div>
     </div>
     <!-- Barre de progression visuelle -->
     <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
       <div id="progress-bar"
-        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-1/5 transition-all duration-500 ease-in-out">
+        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-0/5 transition-all duration-500 ease-in-out">
       </div>
     </div>
   </div>
     <form >
        
-    <section id="form-section-one" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg ">
+    <section id="form-section-one" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden">
         <div class="step-content" data-step="1">
         <h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Information personnelle </h2>
         
@@ -156,15 +156,15 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                <button type="submit" onclick= "displayFormEducation()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
             </div>
         </div>
         </section>
             <section id="form-section-two" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden">
-                <div class="step-content hidden" data-step="2">
+                <div class="step-content " data-step="2">
                 <h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Education </h2>
-            
-                    <div class="mb-4">
+               
+                    <div class=" mb-4">
                         <label for="ecole" class="block text-sm font-medium text-gray-600">ecole</label>
                         <input type="text" id="ecole" placeholder="Votre ecole" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                     </div>
@@ -195,10 +195,11 @@
                    
                   <div class="flex justify-between items-center ">
                     <div class="text-left">
-                        <button type="submit"  class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                        <button type="submit" onclick="displayFormInfo()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
                     </div>
+                   
                     <div class="text-right">
-                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                        <button type="submit" onclick="displayFormExperience()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
                     </div>
                 </div>
             </div>
@@ -245,15 +246,16 @@
 
               <div class="flex justify-between items-center ">
                 <div class="text-left">
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                    <button type="submit" onclick="displayFormEducation()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
                 </div>
+                
                 <div class="text-right">
-                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                    <button type="submit" onclick="displayformlangue()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
                 </div>
             </div>
         </div>
        </section>
-       <section id="form-section-four" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg  ">
+       <section id="form-section-four" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden ">
         <div class="container">
             <div class="flex space-x-28 justify-center">
                 <h2 class="text-3xl font-semibold mb-6 text-gray-800 ">Language</h2>
@@ -263,19 +265,36 @@
             <div id="language-container"></div>
             <div id="display-container" class="mt-8 p-4 bg-gray-100 rounded-lg"></div>  
     </div>
+    <div class="flex justify-between items-center  mt-4  ">
+        <div class="text-left">
+            <button type="submit" onclick="displayFormExperience()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+        </div>
+        <div class="text-right">
+            <button type="submit" onclick="displayformskils()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+        </div>
+    </div>
        </section>
-       <section id="skills-section" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg">
+       <section id="skills-section" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden">
         <div class="container">
             <div class="flex space-x-28 justify-center">
                 <h2 class="text-3xl font-semibold mb-6 text-gray-800">Skills</h2>
                 <a href="#" id="add-skill" class="text-3xl font-semibold mb-6 text-gray-800">&plus;</a>
             </div>
-            <div id="skills-container"></div> <!-- Conteneur pour les compétences ajoutées -->
-            <div id="display-skills-container" class="mt-8 p-4 bg-gray-100 rounded-lg"></div> <!-- Conteneur pour l'affichage -->
+            <div id="skills-container"></div> 
+            <div id="display-skills-container" class="mt-8 p-4 bg-gray-100 rounded-lg"></div> 
+        </div>
+        <div class="flex justify-between items-center mt-4 ">
+            <div class="text-left">
+                <button type="submit" onclick="displayformlangue()" class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+            </div>
+            <div class="text-right">
+                <button type="submit"  class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+            </div>
         </div>
     </section>
         </form>
- 
+
+       
 
 
    
