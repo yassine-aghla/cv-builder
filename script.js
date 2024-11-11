@@ -1,3 +1,4 @@
+
 let hero=document.getElementById("hero-section")
 let progresse=document.getElementById("bar-progresse")
 let forminfo=document.getElementById("form-section-one")
@@ -5,12 +6,14 @@ let formEducation=document.getElementById("form-section-two")
 let formExperience=document.getElementById("form-section-three")
 let formLangue=document.getElementById("form-section-four")
 let formSkills=document.getElementById("skills-section")
+let formCertif=document.getElementById("certif-section")
 let progressBar = document.getElementById("progress-bar")
-let barinfo= "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-1/5 transition-all duration-500 ease-in-out"
-let barEducation="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-2/5 transition-all duration-500 ease-in-out"
-let barExperience="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-3/5 transition-all duration-500 ease-in-out"
-let barLangue="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-4/5 transition-all duration-500 ease-in-out"
-let barSkills="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-5/5 transition-all duration-500 ease-in-out"
+let barinit="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-0/6 transition-all duration-500 ease-in-out"
+let barinfo= "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-1/6 transition-all duration-500 ease-in-out"
+let barEducation="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-2/6 transition-all duration-500 ease-in-out"
+let barExperience="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-3/6 transition-all duration-500 ease-in-out"
+let barLangue="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-4/6 transition-all duration-500 ease-in-out"
+let barSkills="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 w-5/6 transition-all duration-500 ease-in-out"
 let color="flex items-center justify-center w-10 h-10 bg-blue-500 text-white font-bold rounded-full transition-all duration-500 ease-in-out"
 let nonColor="flex items-center justify-center w-10 h-10 bg-blue-200 text-gray-500 font-bold rounded-full transition-all duration-500 ease-in-out"
 let iconInfo=document.getElementById("step1")
@@ -18,10 +21,12 @@ let iconEducation=document.getElementById("step3")
 let iconExperience=document.getElementById("step2")
 let iconlangue=document.getElementById("step4")
 let iconskiils=document.getElementById("step5")
+let iconCertif=document.getElementById("step6")
 function displayFormInfo(){
     hero.style.display="none"
     progresse.style.display="block"
     forminfo.style.display="block"
+    progressBar.className=barinit;
      formEducation.style.display="none"
      iconInfo.className=color;
      iconEducation.className=nonColor;
@@ -34,9 +39,10 @@ function displayFormEducation(){
     formEducation.style.display="block"
     formExperience.style.display="none"
     progressBar.className=barinfo;
-    iconInfo.className=nonColor;
+    iconInfo.className=color;
     iconEducation.className=color;
     iconExperience.className=nonColor;
+    formCertif.style.display="none";
 
    
 }
@@ -47,9 +53,9 @@ function displayFormExperience(){
       formLangue.style.display="none"
       progressBar.className=barEducation;
       iconExperience.className=color;
-      iconEducation.className=nonColor;
+      iconEducation.className=color;
       iconlangue.className=nonColor;
-
+      formCertif.style.display="none";
      
 
 }
@@ -60,9 +66,9 @@ function displayformlangue(){
       formSkills.style.display="none"
       progressBar.className=barExperience;
       iconlangue.className=color;
-      iconExperience.className=nonColor;
+      iconExperience.className=color;
       iconskiils.className=nonColor;
-
+      formCertif.style.display="none";
 }
 
 function displayformskils(){
@@ -71,9 +77,21 @@ function displayformskils(){
     formSkills.style.display="block"
     progressBar.className=barLangue;
     iconskiils.className=color;
-    iconlangue.className=nonColor;
+    iconlangue.className=color;
+    iconCertif.className=nonColor;
+    formCertif.style.display="none";
 }
+function displayformcertif(){
+    formSkills.style.display="none"
+    progresse.style.display="block"
+    formCertif.style.display="block"
+    progressBar.className=barSkills;
+    iconskiils.className=color;
+    iconlangue.className=color;
+    iconCertif.className=color;
 
+
+}
 
 
 const addBtn = document.getElementById("add");
@@ -92,13 +110,11 @@ function ajouterLangue() {
     placeholderOption.value = "";
     placeholderOption.textContent = "Sélectionnez le niveau";
     placeholderOption.disabled = true;
-    placeholderOption.selected = true;
     niveauSelect.appendChild(placeholderOption); 
 
      const niveaux = ["Courant", "Intermédiaire", "Débutant", "Maternelle"];
      niveaux.forEach(niveau => {
         const option = document.createElement("option");
-        option.value = niveau.toLowerCase();
         option.textContent = niveau;
         niveauSelect.appendChild(option);
     });
@@ -230,3 +246,106 @@ addSkillBtn.addEventListener("click", (e) => {
     e.preventDefault(); 
     ajouterSkill();
 });
+
+function  ajoutreeducation() {
+    // nvetude.id = `${education-container}-`
+     const container = document.getElementById('education-container');
+     const newEntry = container.querySelector('.education-entry').cloneNode(true);
+        container.appendChild(newEntry);
+     }
+     function  ajoutreExperience() {
+        const contenu = document.getElementById('experience-container');
+        const neww = contenu.querySelector('.experience-entry').cloneNode(true);
+           contenu.appendChild(neww);
+        }
+    
+
+
+ 
+
+  const addCertifBtn = document.getElementById("add-certif");
+  const certifContainer = document.getElementById("certif-container");
+  const displaycertifContainer = document.getElementById("display-certif-container");
+  
+  function ajoutercertif() {
+      
+      const certifDiv = document.createElement("div");
+      certifDiv.className = "flex items-center mb-4 space-x-4";
+  
+      
+      const certifInput = document.createElement("input");
+      certifInput.type = "text";
+      certifInput.placeholder = "Entrez la certification";
+      certifInput.className = "border rounded px-4 py-2 w-full";
+  
+  
+  
+     
+      const confirmcertifBtn = document.createElement("button");
+      confirmcertifBtn.textContent = "Add";
+      confirmcertifBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
+      
+      
+      const deleteBtn = document.createElement("a");
+      deleteBtn.innerHTML = "&times;";
+      deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
+      deleteBtn.addEventListener("click", () => {
+          certifContainer.removeChild(certifDiv);
+      });
+  
+      
+      certifDiv.appendChild(certifInput);
+   
+      certifDiv.appendChild(confirmcertifBtn);
+      certifDiv.appendChild(deleteBtn);
+  
+     
+      certifContainer.appendChild(certifDiv);
+  
+      
+      confirmcertifBtn.addEventListener("click", () => {
+        afficherCertif(certifInput.value);
+          certifInput.value = "";
+      });
+  }
+  
+  
+  function afficherCertif(certif) {
+      const displaycertifDiv = document.createElement("div");
+      displaycertifDiv.className = "p-2 mb-2 bg-gray-200 rounded";
+      displaycertifDiv.innerHTML = `certification :est  ${certif} `;
+   
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Supprimer";
+      deleteBtn.className = "bg-red-500 text-white px-4 py-2 rounded ml-4 ";
+  
+     
+      deleteBtn.addEventListener("click", () => {
+          displaycertifContainer.removeChild(displaycertifDiv); 
+      });
+  
+     
+      displaycertifDiv.appendChild(deleteBtn);
+      displaycertifContainer.appendChild(displaycertifDiv);
+  }
+  
+  
+  addCertifBtn.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      ajoutercertif();
+  });
+  
+// const quill = new Quill('#description', {
+//     theme: 'snow'
+//   });
+  const options = {
+    debug: 'info',
+    modules: {
+      toolbar: true,
+    },
+   
+    theme: 'snow'
+  };
+  const quill = new Quill('#description', options);
+
+ 

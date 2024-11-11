@@ -1,14 +1,1 @@
-{ "name": "cv-builder",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "build": "tailwindcss -i ./public/css/input.css -o ./public/css/styles.css --watch"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "tailwindcss": "^3.4.14"
-  }
-}
+{"name":"cv-builder","version":"1.0.0","main":"index.js","scripts":{"build":"tailwindcss -i ./public/css/input.css -o ./public/css/styles.css --watch"},"keywords":[],"author":"","license":"ISC","description":"","devDependencies":{"tailwindcss":"^3.4.14"},"dependencies":{"quill":"^2.0.2"}}
