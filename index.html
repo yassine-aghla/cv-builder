@@ -16,6 +16,7 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js" integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBl5MPCA9Y8r7qvlwx1/Mc9hNTzY+kS5kX6PdoDq41ws1HiVNLdZA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
 
 </head>
@@ -148,7 +149,7 @@
             </div>
             <div class="mb-4">
                 <label for="postal-code" class="block text-sm font-medium text-gray-600">Code Postal</label>
-                <input type="text" id="postal-code" placeholder="Votre code postal" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+                <input type="number" id="postal-code" placeholder="Votre code postal" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
             </div>
             <div class="mb-4">
                 <label for="phone" class="block text-sm font-medium text-gray-600">Téléphone</label>
@@ -161,15 +162,16 @@
             <div class="mb-4">
                 <label for="linkden" class="block text-sm font-medium text-gray-600">linkden</label>
                 <input type="url" id="linkden" placeholder="Votre linkden" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
-            </div>
+</div>
             <div class="mb-4">
                 <label for="github" class="block text-sm font-medium text-gray-600">github</label>
                 <input type="url" id="github" placeholder="Votre github" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
             </div>
-
+           
             <div class="text-center">
-                <button type="submit" onclick= "displayFormEducation()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                <button type="button"  onclick= "displayFormEducation()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
             </div>
+           
         </div>
         </section>
             <section id="form-section-two" class="max-w-lg mx-auto mt-16 p-8 bg-white rounded-lg shadow-lg hidden">
@@ -187,7 +189,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="degree" placeholder="degree"  class="block text-sm font-medium text-gray-600">Diplome</label>
-                        <select id="city"  class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+                        <select id="degree"  class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                             <option value="bacauliriat">Bacaluriat</option>
                             <option value="bac+2">Bac+2</option>
                             <option value="licence">Licence</option>
@@ -199,23 +201,23 @@
                         <input type="text" id="domaine" placeholder="ex:ecenomie" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                     <div class="mb-4">
                         <label for="date" class="block text-sm font-medium text-gray-600">annee de diplome</label>
-                        <input type="date" id="country" placeholder="Votre date de gradution" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+                        <input type="date" id="date_diplome" placeholder="Votre date de gradution" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                     </div>
                     <div class="mb-4">
                         <label for="description" class="block text-sm font-medium text-gray-600">description</label>
-                        <textarea  id="description" placeholder="Votre description" class="mt-1 p-2 w-full border border-gray-300 rounded-md"></textarea>
+                        <div  id="description" placeholder="Votre description" class="mt-1 p-2 w-full border border-gray-300 rounded-md"></div>
                     </div>
                     </div> 
                 </div>
                   <div class="flex justify-between items-center ">
                     <div class="text-left">
-                        <button type="submit" onclick="displayFormInfo()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                        <button type="button" onclick="displayFormInfo()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
                     </div>
                     <div class="text-center">
                         <button type="button" onclick=" ajoutreeducation()"  class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full mt-4">+ Ajouter une autre éducation</button>
                     </div>
                     <div class="text-right">
-                        <button type="submit" onclick="displayFormExperience()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                        <button type="button" onclick="displayFormExperience()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
                     </div>
                 </div>
             </div>
@@ -231,15 +233,15 @@
          
                 <div class="mb-4">
                     <label for="post" class="block text-sm font-medium text-gray-600">intitule de post</label>
-                    <input type="text" id="ecole" placeholder="Votre post" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+                    <input type="text" id="post" placeholder="Votre post" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                 </div>
                 <div class="mb-4">
                     <label for="lieu" class="block text-sm font-medium text-gray-600">ville</label>
                     <input type="text" id="ville" placeholder="ville de lecole" class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                 </div>
                 <div class="mb-4">
-                    <label for="degree" placeholder="degree"  class="block text-sm font-medium text-gray-600">type de contrat</label>
-                    <select id="degree"  class="mt-1 p-2 w-full border border-gray-300 rounded-md">
+                    <label for="genre" placeholder="type de contrat"  class="block text-sm font-medium text-gray-600">type de contrat</label>
+                    <select id="genre"  class="mt-1 p-2 w-full border border-gray-300 rounded-md">
                         <option value="cdd">cdd</option>
                         <option value="cdi">cdi</option>
                         <option value="interim">interim</option>
@@ -249,7 +251,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="description" class="block text-sm font-medium text-gray-600">description</label>
-                    <textarea  id="description" placeholder="Votre description" class="mt-1 p-2 w-full border border-gray-300 rounded-md"></textarea>
+                    <div  id="description_E" placeholder="Votre description" class="mt-1 p-2 w-full border border-gray-300 rounded-md"></div>
                 </div>
                 <div class="mb-4">
                     <label for="date" class="block text-sm font-medium text-gray-600">Date de debut</label>
@@ -269,13 +271,13 @@
      </div>
               <div class="flex justify-between items-center ">
                 <div class="text-left">
-                    <button type="submit" onclick="displayFormEducation()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                    <button  type="button" onclick="displayFormEducation()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
                 </div>
                 <div class="text-center my-4">
                     <button type="button" onclick="ajoutreExperience()"  class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md">Ajouter une autre expérience</button>
                 </div>
                 <div class="text-right">
-                    <button type="submit" onclick="displayformlangue()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                    <button type="button" onclick="displayformlangue()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
                 </div>
             </div>
         </div>
@@ -292,10 +294,10 @@
     </div>
     <div class="flex justify-between items-center  mt-4  ">
         <div class="text-left">
-            <button type="submit" onclick="displayFormExperience()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+            <button type="button" onclick="displayFormExperience()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
         </div>
         <div class="text-right">
-            <button type="submit" onclick="displayformskils()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+            <button type="button" onclick="displayformskils()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
         </div>
     </div>
        </section>
@@ -310,10 +312,10 @@
         </div>
         <div class="flex justify-between items-center mt-4 ">
             <div class="text-left">
-                <button type="submit" onclick="displayformlangue()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                <button type="button" onclick="displayformlangue()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
             </div>
             <div class="text-right">
-                <button type="submit" onclick= "displayformcertif()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                <button type="button" onclick= "displayformcertif()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
             </div>
         </div>
     </section>
@@ -328,21 +330,23 @@
         </div>
         <div class="flex justify-between items-center mt-4 ">
             <div class="text-left">
-                <button type="submit" onclick="displayformskils()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
+                <button type="button" onclick="displayformskils()" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl ">precedent</button>
             </div>
             <div class="text-right">
-                <button type="submit"  class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
+                <button type="button"  class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl">Next</button>
             </div>
         </div>
+        <button id="yassine">submit</button>
     </section>
         </form>
     
-
-    <section id="cv_modele" class="max-w-4xl mx-auto mt-16 p-8 bg-slate-300 rounded-lg shadow-lg">
+<!-- <div id="cv_container" class= "">
+    <h3 class="mx-auto text-2xl font-bold text-gray-800 my-4 text-center" >choisir votre cvmodele </h3>
+    <section id="cv_modele" class="max-w-2xl mx-auto mt-24  p-8 bg-slate-300 rounded-lg shadow-lg cursor-pointer ">
       <div class="border-b-2 border-gray-600  ">
         <div class="d flex justify-between">
             <div class="img">
-                <img src="img.jpg" alt="image-de-cv">
+                <img src="img.jpg" alt="image-de-cv" onchange= "previewImage(event)">
             </div>
             <div class="info">
                  <div class="nom"><h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">yassine aghla</h2></div>
@@ -364,10 +368,6 @@
                         <div class="icon_tele"><i class="fas fa-phone"></i></div>
                         <div class="nom_tele" >0653687751</div>
                     </div>
-                    <div class="email flex gap-2">
-                        <div class="icon_email"><i class="fas fa-envelope"></i></div>
-                        <div class="nom_email" >yassineaghla23@gmail.com</div>
-                    </div>
                     <div class="linkden flex gap-2">
                         <div class="icon_linkden"><i class="fab fa-linkedin"></i></div>
                         <div class="nom_linkden" >Yassine aghla</div>
@@ -375,6 +375,10 @@
                     <div class="ville flex gap-2">
                         <div class="icon_github"><i class="fab fa-github"></i></div>
                         <div class="nom_github" >yassine-aghla</div>
+                    </div>
+                    <div class="email flex gap-2">
+                        <div class="icon_email"><i class="fas fa-envelope"></i></div>
+                        <div class="nom_email" >yassineaghla23@gmail.com</div>
                     </div>
              </div>    
             </div>
@@ -414,7 +418,7 @@
     <div class="titre_education"><h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">langue</h2></div>
     <div class="liste_langues">
         <ul>
-            <li>french</li>
+            <li>francais</li>
             <li>arab</li>
             <li>englais</li>
         </ul>
@@ -445,7 +449,7 @@
 
 
 </div >  
- <!-- endcontenue -->
+ 
  <div class="contenu ">
     <div class="education ml-3 ">
         <div class="titre_education"><h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Experiences</h2></div>
@@ -475,7 +479,7 @@
            </div>
            <div class="descriptio_education flex">
             <strong>Description:</strong>
-            <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur,adipisicing elit.</p>
            </div>
     </div>
     <div class="education ml-3 ">
@@ -506,7 +510,7 @@
            </div>
            <div class="descriptio_education flex">
             <strong>Description:</strong>
-            <p>Lorem ipsum dolor sit amet consectetur,<br> adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
            </div>
     </div>
     
@@ -514,14 +518,75 @@
     
   
 </div>
-<!-- container end -->
+
     </section>
-   
-       
+    <div class="text-center">
+        <button type="button" id="bitina" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full text-xl" onclick="downloadPDF()">choise</button>
+    </div>
+    <section class="bg-gray-100 font-sans max-w-2xl mt-14  mx-auto cursor-pointer ">
+      <div class="container mx-auto py-8 px-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h1 class="text-3xl font-semibold">John Doe</h1>
+                <p class="text-gray-600">Web Developer</p>
     
- </section>
-        
+                <hr class="my-4">
+    
+                <h2 class="text-xl font-semibold mb-2">Summary</h2>
+                <p class="text-gray-700">Experienced web developer with a passion for creating responsive and user-friendly
+                    websites. Proficient in HTML, CSS, JavaScript, and various web development frameworks.</p>
+    
+                <h2 class="text-xl font-semibold mt-4 mb-2">Skills</h2>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>Responsive Web Design</li>
+                </ul>
+    
+                <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold">Web Developer, ABC Company</h3>
+                    <p class="text-gray-700">Developed and maintained company website, implementing responsive design and
+                        optimizing performance. Collaborated with the design team to create visually appealing web pages.
+                    </p>
+                    <p class="text-gray-600">January 2020 - Present</p>
+                </div>
+    
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold">Frontend Developer, XYZ Agency</h3>
+                    <p class="text-gray-700">Worked on various client projects, translating design mockups into interactive
+                        web pages. Utilized modern web technologies to ensure cross-browser compatibility.</p>
+                    <p class="text-gray-600">June 2018 - December 2019</p>
+                </div>
+    
+                <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold">Bachelor of Science in Computer Science</h3>
+                    <p class="text-gray-700">University of Example</p>
+                    <p class="text-gray-600">Graduated in May 2018</p>
+                </div>
+    
+                <h2 class="text-xl font-semibold mt-4 mb-2">Contact</h2>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Email: john.doe@example.com</li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/johndoe"
+                            class="text-blue-500 hover:underline">linkedin.com/in/johndoe</a></li>
+                    <li>Website: <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">johndoe.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    </div> -->
+
        
+    <section id="cv_final">
+      
+    </section>
+ 
+        
+
 
 
    
