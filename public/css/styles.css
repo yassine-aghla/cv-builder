@@ -1473,5 +1473,12 @@ video {
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
 }
 
-#cv-section { display: none; }
+
+
+
+#cv-section { display: none;
+  width: 794px;
+    margin: 0 auto;
+} 
  #cv-section.visible { display: block; }
+

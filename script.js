@@ -32,6 +32,7 @@ function displayFormInfo(){
      formEducation.style.display="none"
      iconInfo.className=color;
      iconEducation.className=nonColor;
+
     
 }
 function displayFormEducation(){
@@ -45,6 +46,7 @@ function displayFormEducation(){
     iconEducation.className=color;
     iconExperience.className=nonColor;
     formCertif.style.display="none";
+    
 
    
 }
@@ -144,56 +146,56 @@ function displayModelChoix(){
 const addBtn = document.getElementById("add");
 const languageContainer = document.getElementById("language-container");
 const displayContainer = document.getElementById("display-container");
-function ajouterLangue() {
-     const languageDiv = document.createElement("div");
-    languageDiv.className = "flex items-center mb-4 space-x-4";
-   const nameInput = document.createElement("input");
-    nameInput.type = "text";
-    nameInput.placeholder = "Entrez la langue";
-    nameInput.className = "border rounded px-4 py-2 w-full";
-    const niveauSelect = document.createElement("select");
-    niveauSelect.className = "border rounded px-4 py-2";
-     const placeholderOption = document.createElement("option");
-    placeholderOption.value = "";
-    placeholderOption.textContent = "Sélectionnez le niveau";
-    placeholderOption.disabled = true;
-    niveauSelect.appendChild(placeholderOption); 
+// function ajouterLangue() {
+//      const languageDiv = document.createElement("div");
+//     languageDiv.className = "flex items-center mb-4 space-x-4";
+//    const nameInput = document.createElement("input");
+//     nameInput.type = "text";
+//     nameInput.placeholder = "Entrez la langue";
+//     nameInput.className = "border rounded px-4 py-2 w-full";
+//     const niveauSelect = document.createElement("select");
+//     niveauSelect.className = "border rounded px-4 py-2";
+//      const placeholderOption = document.createElement("option");
+//     placeholderOption.value = "";
+//     placeholderOption.textContent = "Sélectionnez le niveau";
+//     placeholderOption.disabled = true;
+//     niveauSelect.appendChild(placeholderOption); 
 
-     const niveaux = ["Courant", "Intermédiaire", "Débutant", "Maternelle"];
-     niveaux.forEach(niveau => {
-        const option = document.createElement("option");
-        option.textContent = niveau;
-        niveauSelect.appendChild(option);
-    });
-
-    
-    const confirmBtn = document.createElement("button");
-    confirmBtn.textContent = "add";
-    confirmBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
-    
-    
-    const deleteBtn = document.createElement("a");
-    deleteBtn.innerHTML = "&times;";
-    deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
-    deleteBtn.addEventListener("click", () => {
-        languageContainer.removeChild(languageDiv);
-    });
+//      const niveaux = ["Courant", "Intermédiaire", "Débutant", "Maternelle"];
+//      niveaux.forEach(niveau => {
+//         const option = document.createElement("option");
+//         option.textContent = niveau;
+//         niveauSelect.appendChild(option);
+//     });
 
     
-    languageDiv.appendChild(nameInput);
-    languageDiv.appendChild(niveauSelect);
-    languageDiv.appendChild(confirmBtn);
-    languageDiv.appendChild(deleteBtn);
-     languageContainer.appendChild(languageDiv);
+//     const confirmBtn = document.createElement("button");
+//     confirmBtn.textContent = "add";
+//     confirmBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
+    
+    
+//     const deleteBtn = document.createElement("a");
+//     deleteBtn.innerHTML = "&times;";
+//     deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
+//     deleteBtn.addEventListener("click", () => {
+//         languageContainer.removeChild(languageDiv);
+//     });
 
     
-    confirmBtn.addEventListener("click", (e) => {
-        e.preventDefault()
-        afficherLangueEtNiveau(nameInput.value, niveauSelect.value);
-        nameInput.value = "";
-        niveauSelect.value= "";
-    });
-}
+//     languageDiv.appendChild(nameInput);
+//     languageDiv.appendChild(niveauSelect);
+//     languageDiv.appendChild(confirmBtn);
+//     languageDiv.appendChild(deleteBtn);
+//      languageContainer.appendChild(languageDiv);
+
+    
+//     confirmBtn.addEventListener("click", (e) => {
+//         e.preventDefault()
+//         afficherLangueEtNiveau(nameInput.value, niveauSelect.value);
+//         nameInput.value = "";
+//         niveauSelect.value= "";
+//     });
+// }
 
 
 function afficherLangueEtNiveau(langue, niveau) {
@@ -228,47 +230,47 @@ const addSkillBtn = document.getElementById("add-skill");
 const skillsContainer = document.getElementById("skills-container");
 const displaySkillsContainer = document.getElementById("display-skills-container");
 
-function ajouterSkill() {
+// function ajouterSkill() {
     
-    const skillDiv = document.createElement("div");
-    skillDiv.className = "flex items-center mb-4 space-x-4";
+//     const skillDiv = document.createElement("div");
+//     skillDiv.className = "flex items-center mb-4 space-x-4";
 
     
-    const skillInput = document.createElement("input");
-    skillInput.type = "text";
-    skillInput.placeholder = "Entrez la compétence";
-    skillInput.className = "border rounded px-4 py-2 w-full";
+//     const skillInput = document.createElement("input");
+//     skillInput.type = "text";
+//     skillInput.placeholder = "Entrez la compétence";
+//     skillInput.className = "border rounded px-4 py-2 w-full";
 
 
 
    
-    const confirmSkillBtn = document.createElement("button");
-    confirmSkillBtn.textContent = "Add";
-    confirmSkillBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
+//     const confirmSkillBtn = document.createElement("button");
+//     confirmSkillBtn.textContent = "Add";
+//     confirmSkillBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
     
     
-    const deleteBtn = document.createElement("a");
-    deleteBtn.innerHTML = "&times;";
-    deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
-    deleteBtn.addEventListener("click", () => {
-        skillsContainer.removeChild(skillDiv);
-    });
+//     const deleteBtn = document.createElement("a");
+//     deleteBtn.innerHTML = "&times;";
+//     deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
+//     deleteBtn.addEventListener("click", () => {
+//         skillsContainer.removeChild(skillDiv);
+//     });
 
     
-    skillDiv.appendChild(skillInput);
+//     skillDiv.appendChild(skillInput);
  
-    skillDiv.appendChild(confirmSkillBtn);
-    skillDiv.appendChild(deleteBtn);
+//     skillDiv.appendChild(confirmSkillBtn);
+//     skillDiv.appendChild(deleteBtn);
 
    
-    skillsContainer.appendChild(skillDiv);
+//     skillsContainer.appendChild(skillDiv);
 
     
-    confirmSkillBtn.addEventListener("click", () => {
-        afficherSkillEtNiveau(skillInput.value);
-        skillInput.value = "";
-    });
-}
+//     confirmSkillBtn.addEventListener("click", () => {
+//         afficherSkillEtNiveau(skillInput.value);
+//         skillInput.value = "";
+//     });
+// }
 
 
 function afficherSkillEtNiveau(skill) {
@@ -316,47 +318,47 @@ function  ajoutreeducation() {
   const certifContainer = document.getElementById("certif-container");
   const displaycertifContainer = document.getElementById("display-certif-container");
   
-  function ajoutercertif() {
+//   function ajoutercertif() {
       
-      const certifDiv = document.createElement("div");
-      certifDiv.className = "flex items-center mb-4 space-x-4";
+    //   const certifDiv = document.createElement("div");
+    //   certifDiv.className = "flex items-center mb-4 space-x-4";
   
       
-      const certifInput = document.createElement("input");
-      certifInput.type = "text";
-      certifInput.placeholder = "Entrez la certification";
-      certifInput.className = "border rounded px-4 py-2 w-full";
+    //   const certifInput = document.createElement("input");
+    //   certifInput.type = "text";
+    //   certifInput.placeholder = "Entrez la certification";
+    //   certifInput.className = "border rounded px-4 py-2 w-full";
   
   
   
      
-      const confirmcertifBtn = document.createElement("button");
-      confirmcertifBtn.textContent = "Add";
-      confirmcertifBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
+    //   const confirmcertifBtn = document.createElement("button");
+    //   confirmcertifBtn.textContent = "Add";
+    //   confirmcertifBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
       
       
-      const deleteBtn = document.createElement("a");
-      deleteBtn.innerHTML = "&times;";
-      deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
-      deleteBtn.addEventListener("click", () => {
-          certifContainer.removeChild(certifDiv);
-      });
+    //   const deleteBtn = document.createElement("a");
+    //   deleteBtn.innerHTML = "&times;";
+    //   deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
+    //   deleteBtn.addEventListener("click", () => {
+    //       certifContainer.removeChild(certifDiv);
+    //   });
   
       
-      certifDiv.appendChild(certifInput);
+//       certifDiv.appendChild(certifInput);
    
-      certifDiv.appendChild(confirmcertifBtn);
-      certifDiv.appendChild(deleteBtn);
+//       certifDiv.appendChild(confirmcertifBtn);
+//       certifDiv.appendChild(deleteBtn);
   
      
-      certifContainer.appendChild(certifDiv);
+//       certifContainer.appendChild(certifDiv);
   
       
-      confirmcertifBtn.addEventListener("click", () => {
-        afficherCertif(certifInput.value);
-          certifInput.value = "";
-      });
-  }
+//       confirmcertifBtn.addEventListener("click", () => {
+//         afficherCertif(certifInput.value);
+//           certifInput.value = "";
+//       });
+//   }
   
   
   function afficherCertif(certif) {
@@ -381,337 +383,10 @@ function  ajoutreeducation() {
   
   addCertifBtn.addEventListener("click", (e) => {
       e.preventDefault(); 
-      ajoutercertif();
+      ajouterCertif();
   });
   
-// const quill = new Quill('#description', {
-//     theme: 'snow'
-//   });
-  const options = {
-    debug: 'info',
-    modules: {
-      toolbar: true,
-    },
-   
-    theme: 'snow'
-  };
-  const quill = new Quill('#description', options);
 
-  const option = {
-    debug: 'info',
-    modules: {
-      toolbar: true,
-    },
-   
-    theme: 'snow'
-  };
-  const quil = new Quill('#description_E', option);
-
-//   const formElements = {
-//     heroSection: document.getElementById("hero-section"),
-//     progress: document.getElementById("bar-progresse"),
-//     formSections: {
-//         info: document.getElementById("form-section-one"),
-//         education: document.getElementById("form-section-two"),
-//         experience: document.getElementById("form-section-three"),
-//         language: document.getElementById("form-section-four"),
-//         skills: document.getElementById("skills-section"),
-//         certification: document.getElementById("certif-section"),
-//     },
-//     progressBar: document.getElementById("progress-bar"),
-//     modelChoice: document.getElementById("cv_container"),
-//     icons: {
-//         info: document.getElementById("step1"),
-//         education: document.getElementById("step2"),
-//         experience: document.getElementById("step3"),
-//         language: document.getElementById("step4"),
-//         skills: document.getElementById("step5"),
-//         certification: document.getElementById("step6"),
-//     },
-//     displayContainers: {
-//         language: document.getElementById("display-container"),
-//         skills: document.getElementById("display-skills-container"),
-//         certification: document.getElementById("display-certif-container"),
-//     }
-// };
-
-// document.addEventListener("DOMContentLoaded", function(){
-
-//     const CIVI = document.querySelector('#form-section-one');
-//     const bitina = document.querySelector('#bitina');
-//     console.log(bitina);
-//     bitina.addEventListener("click", ()=>{
-//         const CV = {margin: 0.5, image:{type: 'PNG'}, filename:'helloo.pdf', jsPDF:{format:'a4'} };
-//         html2pdf().set(CV).from(CIVI).save();
-//     })
-//     });
-    
-    // function downloadPDF(){
-    //     const { jsPDF } = window.jspdf;
-    //     const doc = new jsPDF();
-    //     const image = document.getElementById('image').src;
-    
-    
-        
-    
-    //     const input1 = document.getElementById('first-name').value;
-    //     const input2 = document.getElementById('last-name').value;
-    //     const input3 = document.getElementById('titre').value;
-    //     const input4 = document.getElementById('city').value;
-    //     const input5 = document.getElementById('country').value;
-    
-    
-    //     doc.setFont('arial');
-    //     doc.setFontSize(18);
-    //     doc.setTextColor(200,50,80);
-    
-    //     doc.text(` `);
-    
-    
-    
-    
-    
-    //     doc.text('HTML2PDFFFFFFFFF', 100, 20);
-        
-    //     doc.setFontSize(16);
-    //     doc.setTextColor(280,50,80);
-    //     doc.text('input', 80, 60);
-    //     doc.setFontSize(40);
-    //     doc.setTextColor(0,50,150);
-    //     doc.text(` ${input1}`, 80, 80);
-    //     doc.text(`input3: ${input3}`, 80, 90);
-    //     doc.text(`input4: ${input4}`, 80, 110);
-    //     doc.text(`input5: ${input5}`, 80, 130);
-    
-    //     if (image !== "") {
-    //         doc.addImage(image, 'PNG', 10, 70, 120, 100);
-    //     }
-    
-    
-    //     doc.save('Test Format.pdf');
-    
-    // }
-    
-    // Function to preview the image uploaded by the user
-    // function previewImage(event) {
-    //     const file = event.target.files[0];
-    //     const reader = new FileReader();
-    
-    //     reader.onload = function () {
-    //         const imagePreview = document.getElementById('imagePreview');
-    //         imagePreview.src = reader.result;  // Set the image source to the uploaded image
-    //         imagePreview.style.display = 'block'; // Show the image preview
-    //     };
-    
-    //     if (file) {
-    //         reader.readAsDataURL(file); // Read the image as a data URL
-    //     }
-    // }
-    // recuperation des infos personnele
-   // Récupérer les données du localStorage ou initialiser un tableau vide
-//  let arr = JSON.parse(localStorage.getItem('arr')) || [];
-//  let arr = [];
-// const personalInfoForm = document.querySelector("#form-section-one");
-// const cvSection = document.getElementById("cv_final");
-// const yassine = document.getElementById("yassine")
-// const btnsave = document.getElementById("btn");
-
-// function saveinfo() {
-//     // console.log("saveinfo called");
-
-//     // Récupérer les données du formulaire
-//     // const image = document.getElementById("image").files[0]; // Récupère l'image téléchargée
-//     const firstName = document.getElementById("first-name").value;
-//     const lastName = document.getElementById("last-name").value;
-//     const title = document.getElementById("titre").value;
-//     const city = document.getElementById("city").value;
-//     const pays = document.getElementById("country").value;
-//     const cPost = document.getElementById("postal-code").value;
-//     const phone = document.getElementById("phone").value;
-//     const linkden = document.getElementById("linkden").value;
-//     const github = document.getElementById("github").value;
-     
-//     // console.log(firstName,lastName,title, city,pays, cPost, phone, linkden, github)
-    
-//     // Créer un objet avec les informations du formulaire
-//     const obj = { 
-//         firstName: firstName,
-//         lastName: lastName,
-//         title: title,
-//         city: city,
-//         pays: pays,
-//         cPost: cPost,
-//         phone: phone,
-//         linkden: linkden,
-//         github: github
-//         // image: image ? URL.createObjectURL(image) : "" 
-//     };
-
-//     arr.push(obj);
-//     // addLocalStorage()
-//     // personalInfoForm.reset();
-//     displayinfo(obj);
-// }
-
-// // function addLocalStorage() {
-// //     window.localStorage.setItem('arr', JSON.stringify(arr));
-// // }
-
-// function displayinfo(obj) {
-//     console.log("displayinfo called");
-
-   
-//     const personalInfoDiv = document.createElement("div");
-//     personalInfoDiv.className = "personal-info";
-    
-   
-//     personalInfoDiv.innerHTML = `
-//         <div class="border-b-2 border-gray-600  ">
-//         <div class="d flex justify-between">
-//             <div class="img">
-//                 <img src="" alt="image-de-cv" onchange= "previewImage(event)">
-//             </div>
-//             <div class="info">
-//                  <div class="nom"><h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">${obj.firstName} ${obj.lastName}</h2></div>
-//                  <div class="title"><h3 class="text-xl font-semibold mb-6 text-gray-400 text-center">${obj.title}</h2></div>
-//                  <div class="grid grid-cols-3 gap-4">
-//                     <div class="ville flex gap-2">
-//                         <div class="icon_ville "><i class="fas fa-city"></i></div>
-//                         <div class="nom_ville" >${obj.city}</div>
-//                     </div>
-//                     <div class="pays flex gap-2">
-//                         <div class="icon_pays"><i class="fas fa-flag"></i></div>
-//                         <div class="nom_pays" > ${obj.pays}</div>
-//                     </div>
-//                     <div class="code_postal flex gap-2">
-//                         <div class="icon_postal"><i class="fas fa-map-marker-alt"></i></div>
-//                         <div class="nom_postal" >${obj.cPost}</div>
-//                     </div>
-//                     <div class="tele flex gap-2">
-//                         <div class="icon_tele"><i class="fas fa-phone"></i></div>
-//                         <div class="nom_tele" >${obj.phone}</div>
-//                     </div>
-//                     <div class="linkden flex gap-2">
-//                         <div class="icon_linkden"><i class="fab fa-linkedin"></i></div>
-//                         <div class="nom_linkden" >"${obj.linkden}"</div>
-//                     </div>
-//                     <div class="ville flex gap-2">
-//                         <div class="icon_github"><i class="fab fa-github"></i></div>
-//                         <div class="nom_github" >"${obj.github}"</div>
-//                     </div>
-                    
-// </div>
-// </div>
-
-
-//     `;
-
-// //     // Ajouter le div à la section du CV
-//      cvSection.appendChild(personalInfoDiv);
-// }
-
-// // // Afficher les informations déjà présentes dans `arr` au chargement de la page
-//  arr.forEach(displayinfo);
-
-// // // Lier la fonction au bouton de soumission du formulaire
-// yassine.addEventListener("click", function(e) {
-//     e.preventDefault(); // Empêcher l'envoi du formulaire
-//     saveinfo();
-//     submitCV() ;
-
-// });
-// // window.onload=displayinfo();
-
-// // recuperation des infos education
- 
-
-
-
-// // function submitCV() {
-// //     // Récupérer toutes les valeurs des champs d'éducation
-// //     let ecole = (document.querySelectorAll(".ecole"));
-// //     console.log(ecole);
-    
-// //     let lieu = Array.from(document.querySelectorAll(".lieu"));
-// //     console.log(lieu);
-// //     let degree = Array.from(document.querySelectorAll(".diplome"));
-// //     console.log(degree);
-// //     let domaine = Array.from(document.querySelectorAll(".domaine"));
-// //     console.log(domaine);
-    
-// //     let date_diplome = Array.from(document.querySelectorAll(".annee_diplome"));
-// //     console.log(date_diplome);
-// //     let description = Array.from(document.querySelectorAll(".description"));
-// //     console.log(description);
-    
-// //     // Vider le tableau des données précédentes
-// //     data = [];
-
-// //     // Créer un tableau d'objets pour chaque entrée d'éducation
-// //     for (let i = 0; i < ecole.length; i++) {
-// //         let educ = {
-// //             ecole: ecole[i].value,
-// //             lieu: lieu[i].value,
-// //             degree: degree[i].value,
-// //             domaine: domaine[i].value,
-// //             date_diplome: date_diplome[i].value,
-// //             description: description[i].value
-// //         };
-// //         data.push(educ);
-// //     }
-
-// //     // Afficher les informations dans le CV
-// //     afficherEducation();
-// // }
-
-// // function afficherEducation() {
-// //     const educationContainer = document.getElementById('cv_final');
-// //     educationContainer.innerHTML =""; // Vider l'affichage avant de le remplir
-
-// //     // Ajouter chaque entrée d'éducation à la section du CV
-// //     data.map((entry) => {
-// //         const entryDiv = document.createElement('div');
-// //         entryDiv.classList.add('mb-6', 'border-b', 'pb-4');
-// //         entryDiv.innerHTML = `
-// //             <h3 class="font-semibold">${entry.ecole} - ${entry.degree}</h3>
-// //             <p><strong>Lieu:</strong> ${entry.lieu}</p>
-// //             <p><strong>Domaine d'étude:</strong> ${entry.domaine}</p>
-// //             <p><strong>Année de diplôme:</strong> ${entry.date_diplome}</p>
-// //             <p><strong>Description:</strong> ${entry.description}</p>
-// //         `;
-// //         educationContainer.appendChild(entryDiv);
-// //     });
-// // } 
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // recuperation des infos experience
-
-// // let post=document.getElementById("post").value
-// // let ville=document.getElementById("ville").value
-// // let typeDeContrat=document.getElementById("genre")
-// // let description_Experince=document.getElementById("description_E")
-// // let valeurInput=typeDeContrat.value;
-// // console.log(valeurInput);
-
-// // Récupérer les données depuis le localStorage, ou initialiser un tableau vide si pas de données
-// // Initialisation du tableau d'éducation et récupération des données existantes
 
 
 document.querySelector("button[onclick='displayFormEducation()']").addEventListener("click", displayCV);
@@ -729,20 +404,43 @@ function displayCV() {
     const github = document.getElementById("github").value;
 
     const cvContent = `
-        <p><strong>Prénom :</strong> ${firstName}</p>
-        <p><strong>Nom :</strong> ${lastName}</p>
-        <p><strong>Titre :</strong> ${title}</p>
-        <p><strong>Ville :</strong> ${city}</p>
-        <p><strong>Pays :</strong> ${country}</p>
-        <p><strong>Code Postal :</strong> ${postalCode}</p>
-        <p><strong>Téléphone :</strong> ${phone}</p>
-        <p><strong>Email :</strong> ${email}</p>
-        <p><strong>LinkedIn :</strong> <a href="${linkedin}" target="_blank">${linkedin}</a></p>
-        <p><strong>GitHub :</strong> <a href="${github}" target="_blank">${github}</a></p>
+        <p class="text-3xl font-semibold mb-6 text-gray-800 text-center"> ${firstName}  ${lastName}</p>
+        <p class="text-xl font-semibold mb-6 text-gray-400 text-center">${title}</p>
+        <div class="grid grid-cols-3 gap-4">
+        <div class="ville flex gap-2">
+         <div class="icon_ville "><i class="fas fa-city"></i></div>
+                        <div class="nom_ville" >${city}</div>
+                    </div>
+       <div class="pays flex gap-2">
+                        <div class="icon_pays"><i class="fas fa-flag"></i></div>
+                        <div class="nom_pays" >${country}</div>
+                    </div>
+        <div class="code_postal flex gap-2">
+                        <div class="icon_postal"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="nom_postal" >${postalCode}</div>
+                    </div>
+         <div class="tele flex gap-2">
+                        <div class="icon_tele"><i class="fas fa-phone"></i></div>
+                        <div class="nom_tele" > ${phone}</div>
+                    </div>
+       
+             <div class="ville flex gap-2">
+                        <div class="icon_github"><i class="fab fa-github"></i></div>
+                        <div class="nom_github" ><a href="${github}" target="_blank">Mon github</a></div>
+                    </div>
+                    <div class="linkden flex flex-wrap gap-2">
+                        <div class="icon_linkden"><i class="fab fa-linkedin"></i></div>
+                        <div class="nom_linkden" ><a href="${linkedin}" target="_blank">Mon linkden</a></div>
+                    </div>
+                     <div class="email flex gap-2">
+                        <div class="icon_email"><i class="fas fa-envelope"></i></div>
+                        <div class="nom_email" >${email}</div>
+                    </div>
+        
     `;
 
-    document.getElementById("cv-content").innerHTML = cvContent;
-    document.getElementById("cv-section").classList.add("visible");
+    document.getElementById("cv-content-info").innerHTML = cvContent;
+    
 }
    
 
@@ -760,7 +458,7 @@ function ajoutreeducation() {
     const degree = newEntry.querySelector('#degree').value;
     const domaine = newEntry.querySelector('#domaine').value;
     const dateDiplome = newEntry.querySelector('#date_diplome').value;
-    const description = newEntry.querySelector('#description').textContent;
+    const description = newEntry.querySelector('#description').value;
 
     // Vérifier si les champs sont remplis avant d'ajouter
     if (ecole && lieu && degree && domaine && dateDiplome) {
@@ -787,11 +485,16 @@ function displayEducationOnCV() {
         const entry = document.createElement('div');
         entry.classList.add('education-entry');
         entry.innerHTML = `
-            <h3>${education.ecole} - ${education.lieu}</h3>
-            <p>Diplôme : ${education.degree}</p>
-            <p>Domaine : ${education.domaine}</p>
-            <p>Date : ${education.dateDiplome}</p>
-            <p>Description : ${education.description}</p>
+          <div class="titre_education"><h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Education</h2></div>
+          <div class="nom_education">  
+            <div class="flex"> <strong class= "text-gray-800" >Nom de lecole : </strong>   <h3>${education.ecole}  </h3></div>
+             <div class="flex"> <strong class= "text-gray-800">lieu de lecole : </strong>   <h3>${education.lieu}  </h3></div>
+             <div class="flex">  <strong class= "text-gray-800">degree  : </strong>   <h3>${education.degree}  </h3></div>
+             <div class="flex">   <strong class= "text-gray-800">domaine : </strong>   <h3>${education.domaine}  </h3></div>
+              <div class="flex">   <strong class= "text-gray-800">date de diplome  : </strong>   <h3>${education.dateDiplome}  </h3></div>
+              <div class="flex">    <strong class= "text-gray-800">votre description : </strong>   <h3>${education.description}  </h3>
+                  
+            
         `;
         cvSection.appendChild(entry);
     });
@@ -815,7 +518,7 @@ function ajoutreExperience() {
     const post = neww.querySelector('#post').value;
     const ville = neww.querySelector('#ville').value;
     const genre = neww.querySelector('#genre').value;
-    const description_Exp = neww.querySelector('#description_E').textContent;
+    const description_Exp = neww.querySelector('#description_E').value;
     const dateDeDebut = neww.querySelector('#datededebut').value;
     const dateDeFin = neww.querySelector('#datedefin').value;
 
@@ -844,12 +547,16 @@ function displayExperienceOnCV() {
         const entryex = document.createElement('div');
         entryex.classList.add('experience-entry');
         entryex.innerHTML = `
-            <h3>${experience.post} </h3>
-            <p>${experience.ville} </p>
-            <p>Diplôme : ${experience.genre}</p>
-            <p>Domaine : ${experience.description_Exp}</p>
-            <p>Date : ${experience.dateDeDebut}</p>
-            <p>Description : ${experience.dateDeFin}</p>
+        <div class="titre_education"><h2 class="text-3xl font-semibold mb-6 text-gray-800 text-center">Experience</h2></div>
+          <div class="nom_education">  
+          <div class="flex">  <strong class= "text-gray-800" >votre post : </strong> <h3>${experience.post}  </h3></div>
+             <div class="flex"> <strong class= "text-gray-800">votre ville : </strong> <h3>${experience.ville}  </h3></div>
+              <div class="flex"> <strong class= "text-gray-800">genre  : </strong>  <h3>${experience.genre}  </h3></div>
+              <div class="flex">  <strong class= "text-gray-800">votre description : </strong> <h3>${experience.description_Exp}  </h3></div>
+              <div class="flex">   <strong class= "text-gray-800">date de debut: </strong><h3>${experience.dateDeDebut}  </h3></div>
+               <div class="flex">   <strong class= "text-gray-800">date de fin :</strong><h3>${experience.dateDeFin}  </h3></div>
+            
+            
         `;
         cvSectionEx.appendChild(entryex);
     });
@@ -955,10 +662,13 @@ function afficherLanguesDansCV() {
     cvLanguageDisplay.innerHTML = '';
 
     // Parcourir le tableau de langues et afficher chaque langue
+
     languages.forEach(language => {
         const cvDiv = document.createElement("div");
         cvDiv.className = "p-2 mb-2 bg-gray-200 rounded";
-        cvDiv.textContent = `Langue : ${language.langue} - Niveau : ${language.niveau}`;
+        cvDiv.innerHTML = `
+         
+        <h4>Langue : ${language.langue} - Niveau : ${language.niveau} </h4>`;
 
         // Ajouter cette langue à l'affichage dans le CV
         cvLanguageDisplay.appendChild(cvDiv);
@@ -1010,7 +720,7 @@ function ajouterSkill() {
     // Événement de confirmation pour ajouter la compétence au tableau
     confirmSkillBtn.addEventListener("click", (e) => {
         e.preventDefault();
-        const skillValue = skillInput.value.trim();
+        const skillValue = skillInput.value;
         if (skillValue !== "") {
             skillsArray.push(skillValue); // Ajouter la compétence dans le tableau
             afficherSkills(); // Mettre à jour l'affichage des compétences
@@ -1027,7 +737,9 @@ function afficherSkills() {
     skillsArray.forEach(skill => {
         const displaySkillDiv = document.createElement("div");
         displaySkillDiv.className = "p-2 mb-2 bg-gray-200 rounded";
-        displaySkillDiv.textContent = `Compétence : ${skill}`;
+        displaySkillDiv.innerHTML = `
+           
+        Compétence : ${skill}`;
 
         // Bouton de suppression pour chaque compétence affichée
         // const deleteBtn = document.createElement("button");
@@ -1055,3 +767,207 @@ addSkillBtn.addEventListener("click", (e) => {
     ajouterSkill();
 });
 
+
+
+
+
+let certifArray = [];
+
+function ajouterCertif() {
+    const certifDiv = document.createElement("div");
+    certifDiv.className = "flex items-center mb-4 space-x-4";
+
+    // Création du champ pour la certification
+    const certifInput = document.createElement("input");
+    certifInput.type = "text";
+    certifInput.placeholder = "Entrez la certification";
+    certifInput.className = "border rounded px-4 py-2 w-full";
+
+    // Bouton de confirmation pour la certification
+    const confirmCertifBtn = document.createElement("button");
+    confirmCertifBtn.textContent = "Add";
+    confirmCertifBtn.className = "bg-blue-500 text-white px-4 py-2 rounded";
+
+    // Bouton de suppression de la certification
+    const deleteBtn = document.createElement("a");
+    deleteBtn.innerHTML = "&times;";
+    deleteBtn.className = "text-red-500 text-2xl cursor-pointer";
+    deleteBtn.addEventListener("click", () => {
+        certifContainer.removeChild(certifDiv);
+    });
+
+    // Ajout des éléments à la div de la certification
+    certifDiv.appendChild(certifInput);
+    certifDiv.appendChild(confirmCertifBtn);
+    certifDiv.appendChild(deleteBtn);
+    certifContainer.appendChild(certifDiv);
+
+    // Événement de confirmation pour ajouter la certification au tableau
+    confirmCertifBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const certifValue = certifInput.value.trim();
+        if (certifValue !== "") {
+            certifArray.push(certifValue); // Ajouter la certification dans le tableau
+            afficherCertif(); // Mettre à jour l'affichage des certifications
+            certifInput.value = ""; // Réinitialiser le champ d'entrée
+        }
+    });
+}
+
+// Fonction pour afficher toutes les certifications du tableau dans le CV
+let affichcertif=document.getElementById("cv-certif-display")
+function afficherCertif() {
+    affichcertif.innerHTML = ""; // Effacer le contenu actuel
+
+    // Afficher chaque certification
+    certifArray.forEach(certif => {
+        const displayCertifDiv = document.createElement("div");
+        displayCertifDiv.className = "p-2 mb-2 bg-gray-200 rounded";
+        displayCertifDiv.innerHTML = `
+            
+        Certification : ${certif}`;
+
+        // Bouton de suppression pour chaque certification affichée
+        // const deleteBtn = document.createElement("button");
+        // deleteBtn.textContent = "Supprimer";
+        // deleteBtn.className = "bg-red-500 text-white px-4 py-2 rounded ml-4";
+        // deleteBtn.addEventListener("click", () => {
+        //     supprimerCertif(certif); // Supprimer la certification du tableau
+        //     afficherCertif(); // Mettre à jour l'affichage après suppression
+        // });
+
+        // Ajouter le bouton de suppression à la certification affichée
+        // displayCertifDiv.appendChild(deleteBtn);
+        affichcertif.appendChild(displayCertifDiv);
+    });
+}
+
+// Fonction pour supprimer une certification du tableau
+function supprimerCertif(certif) {
+    certifArray = certifArray.filter(item => item !== certif); // Retirer la certification du tableau
+}
+
+// Événement pour le bouton d'ajout de certification
+addCertifBtn.addEventListener("click", (e) => {
+    e.preventDefault(); 
+    ajouterCertif();
+});
+let btntelecharger=document.getElementById("btntelechargement")
+let afficherceve=document.getElementById("cv-section")
+function affichercv(){
+    progresse.style.display="none"
+     formCertif.style.display="none"
+  afficherceve.style.display="block"
+  btntelecharger.style.display="block"
+}
+
+// document.addEventListener("DOMContentLoaded", function(){
+
+//     const CIVI = document.querySelector('#cv-section');
+//     const telecharger = document.querySelector('#btntelechargement');
+   
+//     // telecharger.addEventListener("click", ()=>{
+    //     const CV = {margin: 0,
+    //         filename: 'yasine.pdf',
+    //         // image: { type: "jpeg", quality: 0.98 },
+    //         html2canvas: { scale: 6 },
+    //         jsPDF: { unit: "px", format: "letter", orientation: "portrait" }, };
+    //     html2pdf().set(CV).from(CIVI).save();
+    // })
+    // });
+
+    const telecharger = document.querySelector('#btntelechargement');
+    telecharger.addEventListener("click", async function () {
+        const CIVI = document.querySelector('#cv-section');
+       
+        const filename = "my-cv.pdf";
+      
+        const options = {
+          margin: 0,
+          filename: filename,
+        //   image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 3 },
+          jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        };
+        try {
+          await html2pdf().set(options).from(CIVI).save();
+        } catch (error) {
+          
+        }
+      });
+    
+
+
+
+    // document.querySelector("#button_info").addEventListener("click", function (e) {
+    //     e.preventDefault(); // Empêche l'envoi du formulaire si la validation échoue
+    
+    //     const firstName = document.querySelector("#first-name").value.trim();
+    //     const lastName = document.querySelector("#last-name").value.trim();
+    //     const titre = document.querySelector("#titre").value.trim();
+    //     const city = document.querySelector("#city").value.trim();
+    //     const country = document.querySelector("#country").value.trim();
+    //     const postalCode = document.querySelector("#postal-code").value.trim();
+    //     const phone = document.querySelector("#phone").value.trim();
+    //     const email = document.querySelector("#email").value.trim();
+    //     const linkden = document.querySelector("#linkden").value.trim();
+    //     const github = document.querySelector("#github").value.trim();
+    
+    //     let valid = true;
+    
+    //     // Regex pour chaque champ
+    //     const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]+$/; // Prénoms/Noms avec caractères spéciaux autorisés
+    //     const postalCodeRegex = /^\d{4,10}$/; // Code postal entre 4 et 10 chiffres
+    //     const phoneRegex = /^\+?\d{8,15}$/; // Numéro de téléphone (avec ou sans indicatif)
+    //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Format email
+    //     const urlRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/.*)?$/; // URL valide
+    
+    //     // Validation des champs
+    //     if (!nameRegex.test(firstName)) {
+    //         valid = false;
+    //         document.getElementById("nameError").textContent = "Please enter your name.";
+    //     document.getElementById("nameError").classList.remove("hidden");
+    //     }
+    //     if (!nameRegex.test(lastName)) {
+    //         alert("Nom invalide. Veuillez entrer un nom valide.");
+    //         valid = false;
+    //     }
+    //     if (titre === "") {
+    //         alert("Le titre du CV ne peut pas être vide.");
+    //         valid = false;
+    //     }
+    //     if (!nameRegex.test(city)) {
+    //         alert("Ville invalide. Veuillez entrer une ville valide.");
+    //         valid = false;
+    //     }
+    //     if (!nameRegex.test(country)) {
+    //         alert("Pays invalide. Veuillez entrer un pays valide.");
+    //         valid = false;
+    //     }
+    //     if (!postalCodeRegex.test(postalCode)) {
+    //         alert("Code postal invalide. Veuillez entrer un code postal valide.");
+    //         valid = false;
+    //     }
+    //     if (!phoneRegex.test(phone)) {
+    //         alert("Numéro de téléphone invalide. Veuillez entrer un numéro valide.");
+    //         valid = false;
+    //     }
+    //     if (!emailRegex.test(email)) {
+    //         alert("Email invalide. Veuillez entrer un email valide.");
+    //         valid = false;
+    //     }
+    //     if (linkden && !urlRegex.test(linkden)) {
+    //         alert("URL LinkedIn invalide. Veuillez entrer un lien valide.");
+    //         valid = false;
+    //     }
+    //     if (github && !urlRegex.test(github)) {
+    //         alert("URL GitHub invalide. Veuillez entrer un lien valide.");
+    //         valid = false;
+    //     }
+    
+    //     if (valid) {
+    //         alert("Formulaire soumis avec succès !");
+            
+    //     }
+    // });
+    
